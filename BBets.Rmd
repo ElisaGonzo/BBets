@@ -34,12 +34,8 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 
 ## Our strategy is to build a Function and the use it to answer the three questions. 
 
-The function will be given a class_size by number of students, odds, and Number_of_times brownlow made the bet.  It will give you back how much Brownlows earnings were. We will use it to answer our three questions below. If you can, improve this function by giving default values to some of its inputs. 
+The function will be given a class_size by number of students, odds, and Number_of_times brownlow made the bet.  It will give you back how much Brownlows earnings were. We will use it to answer our three questions below. If you can, improve this function by giving default values to some of its inputs.
 
-# In the class and payoff as described  If you highered 40 brownlow substitute teachers to do the same thing that Brownlow did then.
-## what is their average earnings
-## the standard deviation and a 95% confidence interval for their earnings?  
-  
 ```{r}
 mymin=numeric(1000)
 for (i in 1:1000) {
@@ -62,7 +58,39 @@ for (i in 1:1000) {
       border="blue",
       breaks=100)
 ```
+
 The Brownlow would lose $285.57 because of students. 
+
+# In the class and payoff as described  If you highered 40 brownlow substitute teachers to do the same thing that Brownlow did then.
+
+```{r}
+mymin=numeric(1000)
+for (i in 40:1000) {
+  mymin[i]=BrLw()
+}
+ smymin<- sort(mymin)
+ 
+ low=smymin[25]
+ high=smymin[975]
+ 
+ mean(smymin)
+ 
+  cat("low value (25th percentile):", low, "\n")
+ cat("high value (975th percentile):", high, "\n")
+ 
+ hist(smymin,
+      main="Histogram of Sorted Values",
+      xlab="Values",
+      ylab="Frequency",
+      col="skyblue",
+      border="blue",
+      breaks=1200)
+``` 
+
+
+## what is their average earnings
+## the standard deviation and a 95% confidence interval for their earnings?  
+
 
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
 
