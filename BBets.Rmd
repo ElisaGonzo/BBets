@@ -158,8 +158,34 @@ for (i in 1:1000) {
 
 A class size of 28 is ideal, but it doesn't result in Brownlow's earnings reaching zero. To achieve a zero value, we would need a fractional number of students, which isn't possible. A class size of 29 brings earnings close to $29, while a class size of 28 results in about -$23. Therefore, a class size of 28 is the best option for getting Brownlow's earnings as close to zero as possible. This conclusion was reached through trial and error.
 
+# The question from rubric, 35 students to make odds fair
 
+```{r}
+mymin=numeric(1000)
+for (i in 1:1000) {
+  mymin[i]=BrLw(numClass = 35, odds=4.367)
+}
+ smymin<- sort(mymin)
+ 
+ low=smymin[25]
+ high=smymin[975]
+ 
+ mean(smymin)
+ 
+  cat("low value (25th percentile):", low, "\n")
+ cat("high value (975th percentile):", high, "\n")
+ 
+ hist(smymin,
+      main="Histogram of Sorted Values",
+      xlab="Values",
+      ylab="Frequency",
+      col="skyblue",
+      border="blue",
+      breaks=100)
+```
 
+With 35 students in class having the best odds are 4.367 to have fair odds.
+  
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
