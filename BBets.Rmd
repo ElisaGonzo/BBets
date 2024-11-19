@@ -91,7 +91,7 @@ for (i in 40:1000) {
 ## what is their average earnings
 ## the standard deviation and a 95% confidence interval for their earnings?  
 
-40 Brownlow's average earning is acyatllu lolsing $270.16.
+40 Brownlow's average earning is actually losing $270.16.
 
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
 
@@ -128,12 +128,35 @@ To determine how Brownlow's earnings reach zero, we used odds of 4.389. This val
 
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
 
+```{r}
+mymin=numeric(1000)
+for (i in 1:1000) {
+  mymin[i]=BrLw(numClass = 28)
+}
+ smymin<- sort(mymin)
+ 
+ low=smymin[25]
+ high=smymin[975]
+ 
+ mean(smymin)
+ 
+  cat("low value (25th percentile):", low, "\n")
+ cat("high value (975th percentile):", high, "\n")
+ 
+ hist(smymin,
+      main="Histogram of Sorted Values",
+      xlab="Values",
+      ylab="Frequency",
+      col="skyblue",
+      border="blue",
+      breaks=100)
+```
+
+
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
 
-
-
-
+A class size of 28 is ideal, but it doesn't result in Brownlow's earnings reaching zero. To achieve a zero value, we would need a fractional number of students, which isn't possible. A class size of 29 brings earnings close to $29, while a class size of 28 results in about -$23. Therefore, a class size of 28 is the best option for getting Brownlow's earnings as close to zero as possible. This conclusion was reached through trial and error.
 
 
 
