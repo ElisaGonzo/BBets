@@ -190,3 +190,4 @@ With 35 students in class having the best odds are 4.367 to have fair odds.
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
+By using BrLw.R, we were able to observe how Brownlow loses money from students due to the 2:1 odds. To bring the earnings to zero, we could adjust the odds or alter the class size. With odds set at 4.389 and a class size of 28, we can achieve a zero balance in earnings. 
